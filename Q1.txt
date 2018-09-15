@@ -1,0 +1,15 @@
+Verify the effect of creating a replicaset in the pods that are running. Also, what is the effect of scaling the service in the output of your service (e.i. when you curl your service’s External IP Address)? Explain why you observe this behavior.
+
+The API is returning the result of OS.Hostname
+
+echohost1-8bc77648c-hv95hNathans-MacBook-Pro:problem1 Kamm$ curl 35.233.220.125
+echohost1-8bc77648c-fblklNathans-MacBook-Pro:problem1 Kamm$ curl 35.233.220.125
+echohost1-8bc77648c-jdr6zNathans-MacBook-Pro:problem1 Kamm$ curl 35.233.220.125
+echohost1-8bc77648c-fblklNathans-MacBook-Pro:problem1 Kamm$ curl 35.233.220.125
+echohost1-8bc77648c-fblklNathans-MacBook-Pro:problem1 Kamm$ curl 35.233.220.125
+echohost1-8bc77648c-hv95hNathans-MacBook-Pro:problem1 Kamm$ curl 35.233.220.125
+echohost1-8bc77648c-hv95hNathans-MacBook-Pro:problem1 Kamm$ curl 35.233.220.125
+echohost1-8bc77648c-fblklNathans-MacBook-Pro:problem1 Kamm$ curl 35.233.220.125
+echohost1-8bc77648c-jdr6zNathans-MacBook-Pro:problem1 Kamm$ 
+
+By calling the endpoint multiple times we can see that our requests are being routed to 3 different hosts.
